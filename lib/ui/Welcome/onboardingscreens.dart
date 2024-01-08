@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mistrioncall/Welcome/loginscreen.dart';
+
+import 'loginscreen.dart';
 class OnboardingScreen extends StatefulWidget {
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
