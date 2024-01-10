@@ -69,33 +69,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 36,
                     width: 36,
                   )),
-              Positioned(
-                left: 0,
-                bottom: 75,
-                right: 0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: imgList.asMap().entries.map((entry) {
-                    return GestureDetector(
-                      onTap: () => _controller.animateToPage(entry.key),
-                      child: Container(
-                        width: 8.0,
-                        height: 8.0,
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 1.0, horizontal: 1.0),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: (Theme.of(context).brightness ==
-                                      Brightness.dark
-                                  ? AppColor.blue
-                                  : Colors.white)
-                              .withOpacity(_current == entry.key ? 0.9 : 0.4),
-                        ),
-                      ),
-                    );
-                  }).toList(),
+        Positioned(
+          left: 0,
+          bottom: 75,
+          right: 0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: imgList.asMap().entries.map((entry) {
+              return GestureDetector(
+                onTap: () => _controller.animateToPage(entry.key),
+                child: Container(
+                  width: 8.0,
+                  height: 8.0,
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 1.0,
+                    horizontal: 1.0,
+                  ),
+                  decoration: BoxDecoration(
+                    shape: _current == entry.key ? BoxShape.rectangle : BoxShape.circle,
+                    borderRadius: _current == entry.key ? BorderRadius.circular(8.0) : null,
+                    color: (Theme.of(context).brightness == Brightness.dark
+                        ? AppColor.blue
+                        : Colors.white)
+                        .withOpacity(_current == entry.key ? 0.9 : 0.4),
+                  ),
                 ),
-              ),
+              );
+            }).toList(),
+          ),
+        ),
               Positioned(
                 left: 0,
                 bottom: 0,
@@ -118,11 +120,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(10.0),
                             color: Colors.grey[100],
                           ),
-                          child: const Row(
+                          child:  Row(
                             children: [
-                              Icon(Icons.edit_location_alt_outlined),
-                              SizedBox(width: 10.0),
-                              Expanded(
+                              SvgPicture.asset(
+                                'assets/svg/Location.svg',
+                                height: 20,
+                                width: 20,
+                              ),
+                              SizedBox(width: 12.0),
+                              const Expanded(
                                 child: TextField(
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
@@ -130,9 +136,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 20.0),
                               // Add space here (adjust the value as needed)
-                              Icon(Icons.edit_location_alt_outlined),
+                    SvgPicture.asset(
+                      'assets/svg/locationSearch.svg',
+                      height: 20,
+                      width: 20,
+                    ),
                             ],
                           ),
                         ),
