@@ -558,7 +558,8 @@ class _HomeScreenState extends State<Home> {
                     ),
                     const SizedBox(height: 12),
                     Container(
-                      height: 332,
+                      height: MediaQuery.of(context).size.height * .4,
+                      margin: EdgeInsets.symmetric(horizontal: 8),
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: imgList.length,
@@ -605,21 +606,21 @@ class _HomeScreenState extends State<Home> {
                                             Icon(
                                               Icons.star,
                                               color: Colors.yellow,
-                                              size: 18,
+                                              size: 12,
                                             ),
                                             Icon(Icons.star,
-                                                color: Colors.yellow, size: 18),
+                                                color: Colors.yellow, size: 14),
                                             Icon(Icons.star,
-                                                color: Colors.yellow, size: 18),
+                                                color: Colors.yellow, size: 14),
                                             Icon(Icons.star,
-                                                color: Colors.yellow, size: 18),
+                                                color: Colors.yellow, size: 14),
                                             Icon(Icons.star_half,
-                                                color: Colors.yellow, size: 18),
+                                                color: Colors.yellow, size: 14),
                                             SizedBox(width: 8.0),
                                             Text(
                                               '4.3',
                                               style: TextStyle(
-                                                fontSize: 14.0,
+                                                fontSize: 10.0,
                                                 color: AppColor.textGrey,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -635,7 +636,7 @@ class _HomeScreenState extends State<Home> {
                                           style: TextStyle(
                                             fontFamily: "WordSans",
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 14.0,
+                                            fontSize: 12.0,
                                           ),
                                         ),
                                       ),
@@ -644,7 +645,7 @@ class _HomeScreenState extends State<Home> {
                                         child: Row(
                                           children: [
                                             CircleAvatar(
-                                              radius: 18,
+                                              radius: 14,
                                               backgroundImage: AssetImage(
                                                   'assets/images/workerimage.png'),
                                             ),
@@ -653,7 +654,7 @@ class _HomeScreenState extends State<Home> {
                                             Text(
                                               'Esther Howard',
                                               style: TextStyle(
-                                                fontSize: 14.0,
+                                                fontSize: 12.0,
                                                 color: AppColor.textGrey,
                                                 fontFamily: "WordSans",
                                                 fontWeight: FontWeight.w400,
@@ -666,11 +667,11 @@ class _HomeScreenState extends State<Home> {
                                   ),
                                 ),
                                 Positioned(
-                                    top: 16,
-                                    left: 16,
+                                    top: 14,
+                                    left: 14,
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 8.0, vertical: 2.0),
+                                          horizontal: 6.0, vertical: 2.0),
                                       decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
@@ -679,17 +680,17 @@ class _HomeScreenState extends State<Home> {
                                         "FIXING",
                                         style: TextStyle(
                                             color: AppColor.blue,
-                                            fontSize: 10,
+                                            fontSize: 8,
                                             fontFamily: "Worksans",
                                             fontWeight: FontWeight.w500),
                                       ),
                                     )),
                                 Positioned(
-                                    top: 176,
-                                    right: 16,
+                                    top: 186,
+                                    right: 10,
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 16.0, vertical: 8.0),
+                                          horizontal: 2.0, vertical: 2.0),
                                       decoration: BoxDecoration(
                                           border: Border.all(
                                               color: Colors.white, width: 3.0),
@@ -700,7 +701,7 @@ class _HomeScreenState extends State<Home> {
                                         '\$150',
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 16,
+                                            fontSize: 12,
                                             fontFamily: "Worksans",
                                             fontWeight: FontWeight.bold),
                                       ),
