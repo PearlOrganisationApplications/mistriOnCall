@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mistrioncall/ui/Splash/splashscreensec.dart';
+import 'package:mistrioncall/Splash/splashscreensec.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

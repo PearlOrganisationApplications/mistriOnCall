@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../../utils/constants/AppColor.dart';
-import '../home/home.dart';
-
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+import 'package:mistrioncall/Provider/bottomnavigation.dart';
+import 'package:mistrioncall/Splash/splashscreensec.dart';
+import 'package:mistrioncall/Welcome/signupscreen.dart';
+import 'package:mistrioncall/constants/AppColor.dart';
+import 'package:mistrioncall/Provider/providerdashboard.dart';
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,36 +20,26 @@ class SignUpScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 36.0),
               const SizedBox(height: 36.0),
-
-              Center(child: Image.asset('assets/images/profile.png')),
-
-              const Center(
-                child: Text(
-                  'Hello Sara!',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22.0, // Adjust the font size as needed
-                  ),
+            const Center(
+              child: Text(
+                 'Hello User!',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22.0, // Adjust the font size as needed
                 ),
+              ),
               ),
               const SizedBox(height: 20.0),
               const Center(
                 child: Text(
-                  'Welcome Back,You Have Been',
-                  style: TextStyle(
-                    fontSize: 18.0, // Adjust the font size as needed
+                     'Signup For Better Experience',
+                    style: TextStyle(
+                      fontSize: 18.0, // Adjust the font size as needed
+                    ),
                   ),
-                ),
               ),
 
-              const Center(
-                child: Text(
-                  'Missed For Long Time',
-                  style: TextStyle(
-                    fontSize: 18.0, // Adjust the font size as needed
-                  ),
-                ),
-              ),
+
               const SizedBox(height: 46.0),
 
               TextFormField(
@@ -65,7 +56,7 @@ class SignUpScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                     borderSide: BorderSide.none,
                   ),
-                  hintText: 'Email',
+                  hintText: 'Email Address',
                 ),
                 // validator: _validateFullName,
               ),
@@ -88,45 +79,45 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 // validator: _validateFullName,
               ),
-              const SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: false, // Remember Me checkbox value
-                        onChanged: (bool? value) {
-                          // TODO: Implement your logic when Remember Me is changed
-                        },
-                      ),
-                      const Text('Remember Me'),
-                    ],
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // TODO: Implement your forget password logic
+                  Checkbox(
+                    value: false, // Remember Me checkbox value
+                    onChanged: (bool? value) {
+                      // TODO: Implement your logic when Remember Me is changed
                     },
-                    child: const Text(
-                      'Forget Password?',
-                      style: TextStyle(
-                        color: AppColor.blue,
-                      ),
-                    ),
                   ),
+                  const Text('Remember Me'),
                 ],
               ),
+              GestureDetector(
+                onTap: () {
+                  // TODO: Implement your forget password logic
+                },
+                child: const Text(
+                  'Forget Password?',
+                  style: TextStyle(
+                    color: AppColor.blue,
+                  ),
+                ),
+              ),
+            ],
+          ),
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                          builder: (context) =>HomeScreen() // Replace with your next screen widget
-                      ),
+                    MaterialPageRoute(
+                        builder: (context) =>const BottomNavigation() // Replace with your next screen widget
+                    ),
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColor.blue, // Set your desired background color
+                  primary: AppColor.blue, // Set your desired background color
                 ),
 
                 child: const Text(
@@ -139,7 +130,11 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(height: 16.0),
               TextButton(
                 onPressed: () {
-                  // TODO: Navigate to the registration screen
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                        builder: (context) =>SignUpScreen() // Replace with your next screen widget
+                    ),
+                  );
                 },
                 child: const Text('Don\'t have an account? Sign Up.'),
               ),
@@ -186,7 +181,7 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent, // Make button transparent
+                        primary: Colors.transparent, // Make button transparent
                         shadowColor: Colors.transparent, // Remove button shadow
                       ),
                       onPressed: () {
@@ -202,7 +197,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent, // Make button transparent
+                        primary: Colors.transparent, // Make button transparent
                         shadowColor: Colors.transparent, // Remove button shadow
                       ),
                       onPressed: () {
