@@ -6,17 +6,17 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mistrioncall/utils/constants/AppColor.dart';
 
-import '../../src/model/Category.dart';
+import '../../model/Category.dart';
 import '../../utils/constants/CommonFunctions.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+class Home extends StatefulWidget {
+  Home({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Home> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<Home> {
   int _current = 0;
   final CarouselController _controller = CarouselController();
   final List<String> imgList = [
@@ -31,9 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     CommonFunctions.customTheme();
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -49,11 +47,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         return Container(
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage(
-                                  item,
-                                ),
-                                fit: BoxFit.cover,
-                              )),
+                            image: AssetImage(
+                              item,
+                            ),
+                            fit: BoxFit.cover,
+                          )),
                         );
                       }).toList(),
                       carouselController: _controller,
@@ -84,10 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       right: 0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: imgList
-                            .asMap()
-                            .entries
-                            .map((entry) {
+                        children: imgList.asMap().entries.map((entry) {
                           return GestureDetector(
                             onTap: () => _controller.animateToPage(entry.key),
                             child: Container(
@@ -104,14 +99,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 borderRadius: _current == entry.key
                                     ? BorderRadius.circular(8.0)
                                     : null,
-                                color: (Theme
-                                    .of(context)
-                                    .brightness ==
-                                    Brightness.dark
-                                    ? AppColor.blue
-                                    : Colors.white)
+                                color: (Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? AppColor.blue
+                                        : Colors.white)
                                     .withOpacity(
-                                    _current == entry.key ? 0.9 : 0.4),
+                                        _current == entry.key ? 0.9 : 0.4),
                               ),
                             ),
                           );
@@ -175,13 +168,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Container(
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width * 0.15,
+                              width: MediaQuery.of(context).size.width * 0.15,
                               height: 50,
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 1.0),
+                                  const EdgeInsets.symmetric(horizontal: 1.0),
                               margin: const EdgeInsets.only(left: 6.0),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.0),
@@ -324,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 400,
                             // Set the height according to your design
                             margin:
-                            const EdgeInsets.symmetric(horizontal: 12.0),
+                                const EdgeInsets.symmetric(horizontal: 12.0),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10.0),
@@ -351,7 +341,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   left: 0,
                                   child: Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         margin: const EdgeInsets.symmetric(
@@ -430,7 +420,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
-                                          BorderRadius.circular(10.0)),
+                                              BorderRadius.circular(10.0)),
                                       child: const Text(
                                         "PAINTING",
                                         style: TextStyle(
@@ -451,7 +441,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               color: Colors.white, width: 3.0),
                                           color: AppColor.blue,
                                           borderRadius:
-                                          BorderRadius.circular(50.0)),
+                                              BorderRadius.circular(50.0)),
                                       child: const Text(
                                         '\$150',
                                         style: TextStyle(
@@ -511,10 +501,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: imgList
-                          .asMap()
-                          .entries
-                          .map((entry) {
+                      children: imgList.asMap().entries.map((entry) {
                         return GestureDetector(
                           onTap: () => _controller.animateToPage(entry.key),
                           child: Container(
@@ -531,14 +518,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               borderRadius: _current == entry.key
                                   ? BorderRadius.circular(8.0)
                                   : null,
-                              color: (Theme
-                                  .of(context)
-                                  .brightness ==
-                                  Brightness.dark
-                                  ? Colors.white
-                                  : AppColor.blue)
+                              color: (Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.white
+                                      : AppColor.blue)
                                   .withOpacity(
-                                  _current == entry.key ? 0.9 : 0.2),
+                                      _current == entry.key ? 0.9 : 0.2),
                             ),
                           ),
                         );
@@ -582,8 +567,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 160.0,
                             height: 400,
                             // Set the height according to your design
-                            margin:
-                            const EdgeInsets.symmetric(horizontal: 6.0),
+                            margin: const EdgeInsets.symmetric(horizontal: 6.0),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10.0),
@@ -611,7 +595,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   left: 0,
                                   child: Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         margin: const EdgeInsets.symmetric(
@@ -690,7 +674,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
-                                          BorderRadius.circular(10.0)),
+                                              BorderRadius.circular(10.0)),
                                       child: const Text(
                                         "FIXING",
                                         style: TextStyle(
@@ -711,7 +695,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               color: Colors.white, width: 3.0),
                                           color: AppColor.blue,
                                           borderRadius:
-                                          BorderRadius.circular(50.0)),
+                                              BorderRadius.circular(50.0)),
                                       child: const Text(
                                         '\$150',
                                         style: TextStyle(

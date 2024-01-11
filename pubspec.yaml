@@ -37,7 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   fl_chart: ^0.41.0
   charts_flutter: ^0.12.0
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.16.0
   flutter_rating_bar: ^4.0.1
+  firebase_crashlytics: ^3.4.9
+  carousel_slider: ^4.2.1
+  flutter_svg: ^2.0.9
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -58,4 +63,15 @@ flutter:
   uses-material-design: true
 
   assets:
-   - assets/images/
+    - assets/images/
+    - assets/svg/
+
+  fonts:
+    - family: WorkSans
+      fonts:
+        - asset: assets/font/WorkSans-Bold.ttf
+          weight: 700
+        - asset: assets/font/WorkSans-Regular.ttf
+        - asset: assets/font/WorkSans-SemiBold.ttf
+          weight: 600
+

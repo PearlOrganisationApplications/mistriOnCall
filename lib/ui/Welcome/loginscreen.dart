@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mistrioncall/ui/Provider/bottomnavigation.dart';
 import 'package:mistrioncall/ui/Welcome/signupscreen.dart';
 
 import '../../utils/constants/AppColor.dart';
+import '../home/home.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -9,7 +11,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -19,30 +20,26 @@ class LoginScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 36.0),
               const SizedBox(height: 36.0),
-            const Center(
-              child: Text(
-                 'Hello User!',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22.0, // Adjust the font size as needed
+              const Center(
+                child: Text(
+                  'Hello User!',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22.0, // Adjust the font size as needed
+                  ),
                 ),
-              ),
               ),
               const SizedBox(height: 20.0),
               const Center(
                 child: Text(
-                     'Signup For Better Experience',
-                    style: TextStyle(
-                      fontSize: 18.0, // Adjust the font size as needed
-                    ),
+                  'Signup For Better Experience',
+                  style: TextStyle(
+                    fontSize: 18.0, // Adjust the font size as needed
                   ),
+                ),
               ),
-
-
               const SizedBox(height: 46.0),
-
               TextFormField(
-
                 decoration: InputDecoration(
                   filled: true,
                   suffixIcon: const Icon(
@@ -50,18 +47,18 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.grey, // Replace with your desired color
                   ),
                   fillColor: AppColor.lightblue,
-                  contentPadding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 0.0),
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 0.0),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                     borderSide: BorderSide.none,
                   ),
                   hintText: 'Email',
                 ),
-               // validator: _validateFullName,
+                // validator: _validateFullName,
               ),
               const SizedBox(height: 16.0),
               TextFormField(
-
                 decoration: InputDecoration(
                   filled: true,
                   suffixIcon: const Icon(
@@ -69,7 +66,8 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.grey, // Replace with your desired color
                   ),
                   fillColor: AppColor.lightblue,
-                  contentPadding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 10.0),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                     borderSide: BorderSide.none,
@@ -78,47 +76,48 @@ class LoginScreen extends StatelessWidget {
                 ),
                 // validator: _validateFullName,
               ),
-          const SizedBox(height: 16.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+              const SizedBox(height: 16.0),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Checkbox(
-                    value: false, // Remember Me checkbox value
-                    onChanged: (bool? value) {
-                      // TODO: Implement your logic when Remember Me is changed
-                    },
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: false, // Remember Me checkbox value
+                        onChanged: (bool? value) {
+                          // TODO: Implement your logic when Remember Me is changed
+                        },
+                      ),
+                      const Text('Remember Me'),
+                    ],
                   ),
-                  const Text('Remember Me'),
+                  GestureDetector(
+                    onTap: () {
+                      // TODO: Implement your forget password logic
+                    },
+                    child: const Text(
+                      'Forget Password?',
+                      style: TextStyle(
+                        color: AppColor.blue,
+                      ),
+                    ),
+                  ),
                 ],
               ),
-              GestureDetector(
-                onTap: () {
-                  // TODO: Implement your forget password logic
-                },
-                child: const Text(
-                  'Forget Password?',
-                  style: TextStyle(
-                    color: AppColor.blue,
-                  ),
-                ),
-              ),
-            ],
-          ),
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                        builder: (context) =>SignUpScreen() // Replace with your next screen widget
-                    ),
+                        builder: (context) =>
+                            Home() // Replace with your next screen widget
+                        ),
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColor.blue, // Set your desired background color
+                  backgroundColor:
+                      AppColor.blue, // Set your desired background color
                 ),
-
                 child: const Text(
                   'Login',
                   style: TextStyle(
@@ -129,12 +128,15 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 16.0),
               TextButton(
                 onPressed: () {
-                  // TODO: Navigate to the registration screen
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const SignUpScreen() // Replace with your next screen widget
+                        ),
+                  );
                 },
                 child: const Text('Don\'t have an account? Sign Up.'),
               ),
-
-
               const SizedBox(
                 height: 10,
               ),
@@ -153,7 +155,6 @@ class LoginScreen extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.grey,
                         fontWeight: FontWeight.bold,
-
                       ),
                     ),
                   ),
@@ -172,11 +173,13 @@ class LoginScreen extends StatelessWidget {
                 width: 300, // Set the desired width
                 height: 55, // Set the desired height
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center, // Adjust spacing as needed
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  // Adjust spacing as needed
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent, // Make button transparent
+                        backgroundColor: Colors.transparent,
+                        // Make button transparent
                         shadowColor: Colors.transparent, // Remove button shadow
                       ),
                       onPressed: () {
@@ -192,7 +195,8 @@ class LoginScreen extends StatelessWidget {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent, // Make button transparent
+                        backgroundColor: Colors.transparent,
+                        // Make button transparent
                         shadowColor: Colors.transparent, // Remove button shadow
                       ),
                       onPressed: () {
@@ -205,17 +209,13 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
-              ,
-
+              ),
               const SizedBox(
                 height: 10,
               ),
               const SizedBox(
                 height: 0,
               )
-
-
             ],
           ),
         ),
@@ -223,5 +223,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
-
