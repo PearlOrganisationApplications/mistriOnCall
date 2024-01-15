@@ -9,6 +9,18 @@ import 'package:mistrioncall/utils/constants/AppColor.dart';
 import '../../model/Category.dart';
 import '../../utils/constants/CommonFunctions.dart';
 
+double calculateBottomPadding(BuildContext context, double basePadding) {
+
+  double threshold = 600.0;
+  if (MediaQuery.of(context).size.width < threshold) {
+
+    return basePadding * 1.5;
+  } else {
+
+    return basePadding;
+  }
+}
+
 class Home extends StatefulWidget {
   Home({super.key});
 
@@ -42,30 +54,34 @@ class _HomeScreenState extends State<Home> {
                 color: Colors.transparent,
                 child: Stack(
                   children: [
-                    CarouselSlider(
-                      items: imgList.map((item) {
-                        return Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                            image: AssetImage(
-                              item,
-                            ),
-                            fit: BoxFit.cover,
-                          )),
-                        );
-                      }).toList(),
-                      carouselController: _controller,
-                      options: CarouselOptions(
-                        autoPlay: true,
-                        animateToClosest: true,
-                        enlargeCenterPage: true,
-                        aspectRatio: 1.5,
-                        viewportFraction: 1.0,
-                        onPageChanged: (index, reason) {
-                          setState(() {
-                            _current = index;
-                          });
-                        },
+                    Container(
+                      height: 260,
+                      child: CarouselSlider(
+                        items: imgList.map((item) {
+                          return Container(
+                            height: 160,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                              image: AssetImage(
+                                item,
+                              ),
+                              fit: BoxFit.cover,
+                            )),
+                          );
+                        }).toList(),
+                        carouselController: _controller,
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          animateToClosest: true,
+                          enlargeCenterPage: true,
+                          aspectRatio: 1.6,
+                          viewportFraction: 1.0,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              _current = index;
+                            });
+                          },
+                        ),
                       ),
                     ),
                     Positioned(
@@ -78,7 +94,7 @@ class _HomeScreenState extends State<Home> {
                         )),
                     Positioned(
                       left: 0,
-                      bottom: 75,
+                      bottom: calculateBottomPadding(context, 50),
                       right: 0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -113,7 +129,7 @@ class _HomeScreenState extends State<Home> {
                     ),
                     Positioned(
                       left: 0,
-                      bottom: 0,
+                      bottom: calculateBottomPadding(context, 0),
                       right: 0,
                       child: Container(
                         margin: const EdgeInsets.symmetric(
@@ -218,7 +234,7 @@ class _HomeScreenState extends State<Home> {
               const SizedBox(height: 12),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                height: 250,
+                height:MediaQuery.of(context).size.height*0.35,
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -463,14 +479,14 @@ class _HomeScreenState extends State<Home> {
               const SizedBox(height: 24),
               Container(
                 width: double.infinity,
-                height: 270,
+                height: 290,
                 child: Column(
                   children: [
                     CarouselSlider(
                       items: imgList.map((item) {
                         return Container(
-                          height: 160,
-                          margin: const EdgeInsets.symmetric(horizontal: 14.0),
+                          height: 170,
+                          // margin: const EdgeInsets.symmetric(horizontal: 14.0),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20.0),
@@ -533,7 +549,7 @@ class _HomeScreenState extends State<Home> {
                 ),
               ),
               Container(
-                height: 400,
+                height: 375,
                 color: Colors.transparent,
                 child: Column(
                   children: [
@@ -558,7 +574,7 @@ class _HomeScreenState extends State<Home> {
                     ),
                     const SizedBox(height: 12),
                     Container(
-                      height: MediaQuery.of(context).size.height * .4,
+                      height: 290,
                       margin: EdgeInsets.symmetric(horizontal: 8),
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
