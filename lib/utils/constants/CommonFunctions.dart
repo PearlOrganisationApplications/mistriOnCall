@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-class CommonFunctions{
 
- static void customTheme() {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+class CommonFunctions {
+  static void customTheme(Color statusColor) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       systemNavigationBarDividerColor: null,
-      statusBarColor: Color(0xFF5F60B9),
+      statusBarColor: statusColor,
       statusBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.dark,
     ));

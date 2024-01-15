@@ -5,18 +5,15 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mistrioncall/utils/constants/AppColor.dart';
-
-import '../../model/Category.dart';
-import '../../utils/constants/CommonFunctions.dart';
+import '../../../src/model/Category.dart';
+import '../../../utils/common_widgets/bottomNavigationBar.dart';
+import '../../../utils/constants/CommonFunctions.dart';
 
 double calculateBottomPadding(BuildContext context, double basePadding) {
-
   double threshold = 600.0;
   if (MediaQuery.of(context).size.width < threshold) {
-
     return basePadding * 1.5;
   } else {
-
     return basePadding;
   }
 }
@@ -42,20 +39,18 @@ class _HomeScreenState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    CommonFunctions.customTheme();
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                height: 270,
+                height: 268,
                 color: Colors.transparent,
                 child: Stack(
                   children: [
                     Container(
-                      height: 260,
+                      height: 240,
                       child: CarouselSlider(
                         items: imgList.map((item) {
                           return Container(
@@ -74,7 +69,7 @@ class _HomeScreenState extends State<Home> {
                           autoPlay: true,
                           animateToClosest: true,
                           enlargeCenterPage: true,
-                          aspectRatio: 1.6,
+                          aspectRatio: 1.5,
                           viewportFraction: 1.0,
                           onPageChanged: (index, reason) {
                             setState(() {
@@ -165,6 +160,8 @@ class _HomeScreenState extends State<Home> {
                                     const SizedBox(width: 12.0),
                                     const Expanded(
                                       child: TextField(
+                                        textAlignVertical:
+                                            TextAlignVertical.center,
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: "Dehradun",
@@ -223,10 +220,13 @@ class _HomeScreenState extends State<Home> {
                       "Category",
                       style: AppColor.headingTextStyle,
                     ),
-                    Text(
-                      "View All",
-                      style: AppColor.subTitleTextStyle
-                          .copyWith(color: AppColor.textGrey),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        "View All",
+                        style: AppColor.subTitleTextStyle
+                            .copyWith(color: AppColor.textGrey),
+                      ),
                     ),
                   ],
                 ),
@@ -234,7 +234,7 @@ class _HomeScreenState extends State<Home> {
               const SizedBox(height: 12),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                height:MediaQuery.of(context).size.height*0.35,
+                height: MediaQuery.of(context).size.height * 0.35,
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -480,6 +480,7 @@ class _HomeScreenState extends State<Home> {
               Container(
                 width: double.infinity,
                 height: 290,
+                margin: const EdgeInsets.symmetric(horizontal: 14),
                 child: Column(
                   children: [
                     CarouselSlider(
@@ -575,7 +576,7 @@ class _HomeScreenState extends State<Home> {
                     const SizedBox(height: 12),
                     Container(
                       height: 290,
-                      margin: EdgeInsets.symmetric(horizontal: 8),
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: imgList.length,
@@ -586,7 +587,7 @@ class _HomeScreenState extends State<Home> {
                             // Set the height according to your design
                             margin: const EdgeInsets.symmetric(horizontal: 6.0),
                             decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: AppColor.cardGrey,
                                 borderRadius: BorderRadius.circular(10.0),
                                 border: Border.all(
                                     color: AppColor.cardBorder, width: 0.6)),
@@ -728,6 +729,49 @@ class _HomeScreenState extends State<Home> {
                         },
                       ),
                     ),
+                  ],
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 220,
+                color: AppColor.blue,
+                child: Column(
+                  children: [
+                    const SizedBox(height: 30),
+                    SvgPicture.asset(
+                      'assets/svg/Stars.svg',
+                      height: 48,
+                      width: 210,
+                    ),
+                    const SizedBox(height: 18),
+                    const Text(
+                      "Introducing  Customer Rating",
+                      style: TextStyle(
+                          fontFamily: "Worksans",
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white),
+                    ),
+                    const SizedBox(height: 18),
+                    Container(
+                      width: 140,
+                      height: 36,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10.0)),
+                      child: const Center(
+                        child: Text(
+                          "See Your Rating",
+                          style: TextStyle(
+                              color: AppColor.blue,
+                              fontSize: 14,
+                              fontFamily: "Worksans",
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 18)
                   ],
                 ),
               ),

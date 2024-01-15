@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mistrioncall/ui/Provider/bottomnavigation.dart';
 import 'package:mistrioncall/ui/Welcome/signupscreen.dart';
 
+import '../../src/routes/Routes.dart';
 import '../../utils/constants/AppColor.dart';
-import '../home/home.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -107,12 +107,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            Home() // Replace with your next screen widget
-                        ),
-                  );
+                  Navigator.pushNamed(context, Routes.baseClass);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
@@ -128,12 +123,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 16.0),
               TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const SignUpScreen() // Replace with your next screen widget
-                        ),
-                  );
+                  Navigator.pushNamed(context, Routes.signUp);
                 },
                 child: const Text('Don\'t have an account? Sign Up.'),
               ),
