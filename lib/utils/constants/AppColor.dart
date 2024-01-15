@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppColor {
   static const lightblue = Color(0xFFF6F7F9);
@@ -21,11 +22,10 @@ class AppColor {
     height: 2.0,
   );
   static const regularTextStyle = TextStyle(
-    fontSize: 14.0,
+    fontSize: 12.0,
     fontFamily: "WorkSans",
     color: Color(0xFF616888),
     fontWeight: FontWeight.normal,
-    height: 2.0,
   );
   static const titleTextStyle = TextStyle(
       fontSize: 14.0,
