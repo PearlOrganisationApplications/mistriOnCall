@@ -8,6 +8,7 @@ class AppColor {
   static const textBlack = Color(0xFF1C1F34);
   static const cardGrey = Color(0xFFF0F0FA);
   static const cardBorder = Color(0xFFEBEBEB);
+  static const scaffold = Color(0x0ff6f7f9);
 
   //TODO TEXT STYLE
   static const headingTextStyle = TextStyle(
