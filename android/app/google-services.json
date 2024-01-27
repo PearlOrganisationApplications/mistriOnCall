@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "152933284029",
+    "project_id": "handyman-10954",
+    "storage_bucket": "handyman-10954.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152933284029:android:adc1a869b008322dfe1fd4",
+        "android_client_info": {
+          "package_name": "com.iqonic.servicebooking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP3OzmGQQYhaQhRc9K45-vVC7hyQdS97Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
