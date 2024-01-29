@@ -24,7 +24,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.iqonic.servicebooking'
+        applicationId 'com.pearl.mistrioncalbooking'
         minSdkVersion 21
         targetSdkVersion 34
         versionCode 60

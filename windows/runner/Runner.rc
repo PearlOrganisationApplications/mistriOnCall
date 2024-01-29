@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.iqonic" "\0"
-            VALUE "FileDescription", "handyman_user_flutter" "\0"
+            VALUE "CompanyName", "com.pearl" "\0"
+            VALUE "FileDescription", "handyman" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "handyman_user_flutter" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.iqonic. All rights reserved." "\0"
-            VALUE "OriginalFilename", "handyman_user_flutter.exe" "\0"
-            VALUE "ProductName", "handyman_user_flutter" "\0"
+            VALUE "InternalName", "handyman" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.pearl. All rights reserved." "\0"
+            VALUE "OriginalFilename", "handyman.exe" "\0"
+            VALUE "ProductName", "handyman" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

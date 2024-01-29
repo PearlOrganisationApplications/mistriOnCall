@@ -1,4 +1,4 @@
-package com.iqonic.handyman_user_flutter
+package com.pearl.mistrioncalhandyman
 
 import io.flutter.embedding.android.FlutterActivity
 
