@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "152933284029",
-    "project_id": "handyman-10954",
-    "storage_bucket": "handyman-10954.appspot.com"
+    "project_number": "585014761693",
+    "project_id": "userapp-8e244",
+    "storage_bucket": "userapp-8e244.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:152933284029:android:adc1a869b008322dfe1fd4",
+        "mobilesdk_app_id": "1:585014761693:android:2279bdc7c3ceb9f6266334",
         "android_client_info": {
-          "package_name": "com.iqonic.servicebooking"
+          "package_name": "com.pearl.mistrioncalbooking"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBP3OzmGQQYhaQhRc9K45-vVC7hyQdS97Q"
+          "current_key": "AIzaSyCLQSoVzDcg6G_lzo6y9nyuXscl-nCamAQ"
         }
       ],
       "services": {
