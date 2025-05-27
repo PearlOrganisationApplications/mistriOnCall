@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "179838641367",
+    "project_id": "mistrioncal-9de90",
+    "storage_bucket": "mistrioncal-9de90.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179838641367:android:6be941755a0368d514bc92",
+        "android_client_info": {
+          "package_name": "com.pearl.mistrioncal_sandeep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179838641367-632hh4oijql4ja87itiqai2p0rg6rvgq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pearl.mistrioncal_sandeep",
+            "certificate_hash": "82f301451528a8e33a42bd16590889d0849ff6ef"
+          }
+        },
+        {
+          "client_id": "179838641367-jjjd13rpefjbth42jqua816o5qti82se.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBksshH_PUaQX7HKXBnE1eMpcUEUVYm_ds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179838641367-jjjd13rpefjbth42jqua816o5qti82se.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
