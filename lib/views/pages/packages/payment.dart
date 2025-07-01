@@ -37,8 +37,6 @@ class RazorPayIntegration {
             onPressed: () {
               Get.toNamed('/dash');
             },
-
-
           ),
         ],
       ),

@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_web_auth/flutter_web_auth.dart';
 import 'package:mistri_on_call_new/constant/app_exports.dart';
 import 'package:http/http.dart' as http;
-import 'package:url_launcher/url_launcher.dart';
 
 class ApiFunction {
   late final SharedPrefsService sharedPref;

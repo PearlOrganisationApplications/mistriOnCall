@@ -1,22 +1,26 @@
 import 'package:mistri_on_call_new/constant/app_exports.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 Widget profileTile(IconData firstContIcon, String tileText, String routeOrUrl) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-    child: Column(
-      children: [
-        GestureDetector(
-          onTap: () {
-            if (routeOrUrl.startsWith('http')) {
-              // If it's a URL, launch the URL
-              _launchURL(routeOrUrl);
-            } else {
-              // Otherwise, navigate to the route
-              Get.toNamed(routeOrUrl);
-            }
-          },
+  return Column(
+    children: [
+      InkWell(
+        onTap: () {
+          if (routeOrUrl.startsWith('http')) {
+            // If it's a URL, launch the URL
+            _launchURL(routeOrUrl);
+          } else {
+            // Otherwise, navigate to the route
+            Get.toNamed(routeOrUrl);
+          }
+        },
+        overlayColor: WidgetStateColor.transparent,
+        child: Container(
+          margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+          padding: const EdgeInsets.only(bottom: 15, top: 8),
+          decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: lightGrey, width: 0.5)),
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,18 +68,12 @@ Widget profileTile(IconData firstContIcon, String tileText, String routeOrUrl) {
             ],
           ),
         ),
-        SizedBox(height: 8),
-        const Divider(
-          color: lightGrey,
-          thickness: 0.5,
-        ),
-      ],
-    ),
+      ),
+    ],
   );
 }
 
-
-Widget commonIcons (IconData icon){
+Widget commonIcons(IconData icon) {
   return Icon(
     icon,
     color: lightGrey,
@@ -86,13 +84,15 @@ Widget commonIcons (IconData icon){
 void _launchURL(String url) async {
   final Uri uri = Uri.parse(url);
   if (await canLaunchUrl(uri)) {
-    await launchUrl(uri, mode: LaunchMode.externalApplication); // Launch in browser
+    await launchUrl(uri,
+        mode: LaunchMode.externalApplication); // Launch in browser
   } else {
     throw 'Could not launch $url';
   }
 }
 
-Widget notificationTile(IconData firstContIcon, String tileText, String routeName, RxBool switchValue, Function(bool) onToggle) {
+Widget notificationTile(IconData firstContIcon, String tileText,
+    String routeName, RxBool switchValue, Function(bool) onToggle) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
     child: Column(
@@ -128,17 +128,17 @@ Widget notificationTile(IconData firstContIcon, String tileText, String routeNam
                 ],
               ),
               Obx(() => Transform.scale(
-                scale: 0.9, // Adjust the scale factor as needed
-                child: Switch(
-                  trackOutlineColor: MaterialStateProperty.all(appBlack),
-                  value: switchValue.value,
-                  activeColor: appBlack,
-                  thumbColor: MaterialStateProperty.all(secondaryColor),
-                  activeTrackColor: appBlack,
-                  inactiveTrackColor: appBlack.withOpacity(0.2),
-                  onChanged: onToggle,
-                ),
-              )),
+                    scale: 0.9, // Adjust the scale factor as needed
+                    child: Switch(
+                      trackOutlineColor: MaterialStateProperty.all(appBlack),
+                      value: switchValue.value,
+                      activeColor: appBlack,
+                      thumbColor: MaterialStateProperty.all(secondaryColor),
+                      activeTrackColor: appBlack,
+                      inactiveTrackColor: appBlack.withOpacity(0.2),
+                      onChanged: onToggle,
+                    ),
+                  )),
             ],
           ),
         ),
@@ -153,5 +153,3 @@ Widget notificationTile(IconData firstContIcon, String tileText, String routeNam
     ),
   );
 }
-
-

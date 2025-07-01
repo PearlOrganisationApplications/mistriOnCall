@@ -4,8 +4,6 @@ import 'package:mistri_on_call_new/constant/app_exports.dart';
 import '../../../constant/key.dart';
 
 class PaymentServices {
-  // final razorPayKey = dotenv.get("RAZORPAY_KEY");
-  // final razorPaySecret = dotenv.get("RAZORPAY_SECRET");
 
   final razorPayKey = RAZORPAY_KEY_ID;
   final razorPaySecret = RAZORPAY_KEY_SECRET;
